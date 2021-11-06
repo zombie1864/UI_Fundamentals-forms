@@ -1,4 +1,5 @@
 import LoginForm from "../components/login/LoginForm"
+import '../css/LoginPage.css'
 
 const LoginPage = () => {
     /**
@@ -6,8 +7,8 @@ const LoginPage = () => {
     **/
     return (
         <div className='loginPageContainer'>
-            <center><h1>Rapptr Labs</h1></center>
-            <center><LoginForm/></center>
+            <h1 className='logo'>Rapptr Labs</h1>
+            <LoginForm/>
         </div>
     )
 }

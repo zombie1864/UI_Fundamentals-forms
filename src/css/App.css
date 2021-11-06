@@ -1,3 +1,8 @@
-.App {
-    background-color: aqua;
+body {
+    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('../assets/img/—Pngtree—tech\ background\ creative\ synthesis\ poster_1052587.jpeg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
 }

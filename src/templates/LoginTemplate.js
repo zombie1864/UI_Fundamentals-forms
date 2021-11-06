@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import {BiUserCircle} from 'react-icons/bi'
+import {MdOutlineLock} from 'react-icons/md'
+import '../css/LoginForm.css'
 
 const LoginTemplate = (
     emailInput,
@@ -15,30 +18,32 @@ const LoginTemplate = (
     **/
     return (
         <div>
-            <form onSubmit={handleSubmitForm}>
-                <div>
-                    <label>Email</label>
-                    <span> _Icon_ </span>
+            <form className='loginForm' onSubmit={handleSubmitForm}>
+                <label className='formLabels'>Email</label>
+                <div className='inputContainer'>
+                    <span className='icons'><BiUserCircle/></span>
                     <input 
-                    data-fieldname='email'
                     value={emailInput}
+                    data-fieldname='email'
+                    className='inputFields'
                     onChange={handleInputChange}
                     placeholder='user@rapptrlabs.com'
                     type='text'/>
                     {invalidEmail && <p>Not valid</p>}
                 </div>
-                <div>
-                    <label>Password</label>
-                    <span> _Icon_ </span>
+                <label className='formLabels'>Password</label>
+                <div className='inputContainer'>
+                    <span className='icons'><MdOutlineLock/></span>
                     <input 
-                    data-fieldname='pwd'
                     value={pwdInput}
+                    data-fieldname='pwd'
+                    className='inputFields'
                     onChange={handleInputChange}
                     placeholder='Must be at least 4 characters'
-                    type='text'/>
+                    type='password'/>
                     {invalidPwd && <p>Not valid</p>}
                 </div>
-                <div className='loginContainer'>
+                <div className='loginBtnContainer'>
                     <span>
                         <input 
                         className='loginBtn' 
