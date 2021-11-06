@@ -1,8 +1,8 @@
 import _test_ from './_test_ENV.js'
-import {_validateEmail} from '../validators/validateForm.js'
+import { _validateEmail, _validatePwd } from '../validators/validateForm.js'
 
 
-const testCases = {
+const emailTestCases = {
     "inputs": [
         '',
         ' ',
@@ -14,7 +14,8 @@ const testCases = {
         'jeff@.cuny.edu',
         'jeff@.comz',
         'jeff.io@.com',
-        'jeff.commando@.net'
+        'jeff.commando@.net',
+        'jeff@.com'
     ], 
     "outputs": [
         false, 
@@ -27,9 +28,26 @@ const testCases = {
         true,
         false,
         false,
-        true
+        true,
+        false //NOTE yeilds true should be false 
     ]
 }
 
-_test_(_validateEmail, testCases)
+
+const pwdTestCases = {
+    "inputs": [
+        '123', 
+        '1234', 
+        '123abc', 
+        '12345678901011121314151617'
+    ], 
+    "outputs": [
+        false, 
+        true, 
+        true, 
+        false 
+    ]
+}
+_test_(_validateEmail, emailTestCases)
+_test_(_validatePwd, pwdTestCases)
 

@@ -55,5 +55,5 @@ export const _validatePwd = pwd => {
     @description: aux function
     @param {pwd} String 
     **/
-   return !pwd.length < 4 || !pwd.length > 16
+   return  pwd.length <= 16 && pwd.length >= 4
 }

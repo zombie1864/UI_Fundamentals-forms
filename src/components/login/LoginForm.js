@@ -10,12 +10,14 @@ const LoginForm = () => {
 
    
     const [emailInput, setEmailInput] = useState(''),
-        [pwdInput, setpwdInput] = useState('')
+        [pwdInput, setpwdInput] = useState(''),
+        [formSubmitted, setFormSubmitted] = useState(false),
+        [invalidEmail, setInvalidEmail] = useState(),
+        [invalidPwd, setInvalidPwd] = useState()
 
 
     const handleSubmitForm = event => {
         event.preventDefault()
-        console.log(emailInput);
         const data = {
             email: emailInput, 
             pwd: pwdInput
@@ -26,11 +28,16 @@ const LoginForm = () => {
             loginMetaData.containsValidEmail && 
             loginMetaData.containsValidPwd 
         ) {
+            setFormSubmitted(true)
             console.log('your data transmitted');
             setEmailInput('')
             setpwdInput('')
+            setInvalidEmail()
+            setInvalidPwd()
         } else {
             console.log('invalid credentials');
+            setInvalidEmail(!loginMetaData.containsValidEmail)
+            setInvalidPwd(!loginMetaData.containsValidPwd)
         }
     }
 
@@ -54,6 +61,9 @@ const LoginForm = () => {
     return LoginTemplate(
         emailInput,
         pwdInput,
+        invalidEmail,
+        invalidPwd,
+        formSubmitted,
         handleSubmitForm, 
         handleInputChange
     )
