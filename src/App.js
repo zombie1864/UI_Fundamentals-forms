@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import LoginPage from "./pages/LoginPage";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ListPage from "./pages/ListPage";
+import './css/App.css'
 
 function App() {
+  /**
+  @description: Contains the application logic of the app. Using react-router-dom, a 3rd party library, user can switch between pages.
+  **/
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+      <Routes> 
+          <Route path='/' element={<LoginPage/>}/>
+          <Route path='/list' element={<ListPage/>}/>
+        </Routes>
+      </Router>
     </div>
-  );
+  )
 }
 
 export default App;
