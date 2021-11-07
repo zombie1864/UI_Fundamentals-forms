@@ -6,7 +6,7 @@ export const validateForm = (data) => {
     **/
     return {
         containsValidEmail: _validateEmail(data.email), 
-        containsValidPwd: _validatePwd(data.pwd)
+        containsValidPwd: _validatePwd(data.password)
     }
 }
 

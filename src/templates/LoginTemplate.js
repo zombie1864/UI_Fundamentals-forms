@@ -18,7 +18,6 @@ const LoginTemplate = (
     **/
     return (
         <div>
-            {console.log(formSubmitted)}
             <h1 className='logo'>Rapptr Labs</h1>
             <form className='loginForm' onSubmit={handleSubmitForm}>
                 <label className='formLabels'>Email</label>

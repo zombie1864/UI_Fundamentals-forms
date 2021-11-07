@@ -1,6 +1,7 @@
 import LoginTemplate from '../../templates/LoginTemplate'
 import { validateForm } from '../../validators/validateForm.js'
 import { useState } from 'react'
+import { POSTdata } from '../../utils/http'
 
 const LoginForm = () => {
     /**
@@ -20,7 +21,7 @@ const LoginForm = () => {
         event.preventDefault()
         const data = {
             email: emailInput, 
-            pwd: pwdInput
+            password: pwdInput
         }
         let loginMetaData = validateForm(data)
         console.log(loginMetaData);
@@ -28,6 +29,7 @@ const LoginForm = () => {
             loginMetaData.containsValidEmail && 
             loginMetaData.containsValidPwd 
         ) {
+            POSTdata(data)
             setFormSubmitted(true)
             console.log('your data transmitted');
             setEmailInput('')
