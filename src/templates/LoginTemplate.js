@@ -18,6 +18,8 @@ const LoginTemplate = (
     **/
     return (
         <div>
+            {console.log(formSubmitted)}
+            <h1 className='logo'>Rapptr Labs</h1>
             <form className='loginForm' onSubmit={handleSubmitForm}>
                 <label className='formLabels'>Email</label>
                 <div className='inputContainer'>
@@ -25,11 +27,11 @@ const LoginTemplate = (
                     <input 
                     value={emailInput}
                     data-fieldname='email'
-                    className='inputFields'
+                    className={invalidEmail ? 'inputFields invalidInput' : 'inputFields'}
                     onChange={handleInputChange}
                     placeholder='user@rapptrlabs.com'
                     type='text'/>
-                    {invalidEmail && <p>Not valid</p>}
+                    {invalidEmail && <p className='errMsg'>Invalid Email</p>}
                 </div>
                 <label className='formLabels'>Password</label>
                 <div className='inputContainer'>
@@ -37,18 +39,18 @@ const LoginTemplate = (
                     <input 
                     value={pwdInput}
                     data-fieldname='pwd'
-                    className='inputFields'
+                    className={invalidPwd ? 'inputFields invalidInput' : 'inputFields'}
                     onChange={handleInputChange}
                     placeholder='Must be at least 4 characters'
                     type='password'/>
-                    {invalidPwd && <p>Not valid</p>}
+                    {invalidPwd && <p className='errMsg'>Password must be between 4-16 characters long</p>}
                 </div>
-                <div className='loginBtnContainer'>
+                <div className={formSubmitted ? 'loginBtnContainer_success' : 'loginBtnContainer' }>
                     <span>
                         <input 
-                        className='loginBtn' 
+                        className={formSubmitted ? null : 'loginBtn'} 
                         type="submit" 
-                        value="Login" 
+                        value={formSubmitted ? 'Success!' : 'Login'}
                         disabled={formSubmitted ? true : false}/>
                     </span>
                 </div>

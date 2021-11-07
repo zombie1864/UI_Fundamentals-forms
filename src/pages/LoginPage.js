@@ -7,7 +7,6 @@ const LoginPage = () => {
     **/
     return (
         <div className='loginPageContainer'>
-            <h1 className='logo'>Rapptr Labs</h1>
             <LoginForm/>
         </div>
     )

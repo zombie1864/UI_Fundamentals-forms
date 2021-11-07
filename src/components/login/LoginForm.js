@@ -48,10 +48,12 @@ const LoginForm = () => {
         **/
         switch (event.target.dataset.fieldname) {
             case 'email':
+                setInvalidEmail(false)
                 setEmailInput(event.target.value.trim()) 
                 break 
             case 'pwd':
                 setpwdInput(event.target.value)
+                setInvalidPwd(false)
                 break
             default:
         }

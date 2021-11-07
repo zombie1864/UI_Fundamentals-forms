@@ -19,7 +19,7 @@
     max-width: 850px;
     padding: 15px 10px 10px 10px;
     text-align: center;
-    background: #151b26f3;
+    background: #151b26;
     overflow: hidden;
 }
 
@@ -71,12 +71,23 @@
 
 .inputFields {
     height:50px;
-    background-color: #151b2656;
+    width: 200px;
+    background-color: #151b26;
     color: wheat;
     border: none;
     margin: 10px;
     border-bottom: 1.5px solid rgba(63, 63, 63, 0.5);
 } 
+
+.invalidInput {
+    background-size: 8px 8px;
+    background-image: linear-gradient(135deg, rgba(232, 71, 76, 0.5), rgba(232, 71, 76, 0.5) 25%, transparent 25%, transparent 50%, rgba(232, 71, 76, 0.5) 50%, rgba(232, 71, 76, 0.5) 75%, transparent 75%, transparent);
+    background-repeat: repeat;
+}
+
+.errMsg {
+    color: crimson;
+}
 
 .inputFields:hover::placeholder {
     -webkit-transition:.5s;
@@ -151,6 +162,43 @@
 
 .loginBtn:hover {
     animation: pulse 1s;
+}
+
+.loginBtnContainer_success span input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-color: #2b7b55;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: wheat;
+    border: 1px solid #0e31db;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.loginBtnContainer_success span{
+    position: relative;
+    width: 200px;
+    height: 60px;
+    margin: 20px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.loginBtnContainer_success span::before,
+.loginBtnContainer_success span::after{
+    content: '';
+    position: absolute;
 }
 
 @keyframes pulse {
