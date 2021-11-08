@@ -16,14 +16,14 @@ const LoginTemplate = (
 ) => {
     /**
     @description: view function, deals with the render markup of login page
-    @param {emailInput} String: Input from user
-    @param {pwdInput} String: Input from user
-    @param {invalidEmail} Boolean: Used for dynamic styling and rendering of errMsg
-    @param {invalidPwd} Boolean: Used for dynamic styling and rendering of errMsg
-    @param {formSubmitted} Boolean: Used for dynamic styling and render msg to user on successful form 
-    @param {redirect} Boolean: true => redirect to list page 
-    @param {handleSubmitForm} cbFunc: handles validation of form upon submission 
-    @param {handleInputChange} cbFunc: Used for controlled comp of form 
+    @param {emailInput - state} String: Input from user
+    @param {pwdInput- state} String: Input from user
+    @param {invalidEmail- state} Boolean: Used for dynamic styling and rendering of errMsg
+    @param {invalidPwd- state} Boolean: Used for dynamic styling and rendering of errMsg
+    @param {formSubmitted- state} Boolean: Used for dynamic styling and render msg to user on successful form 
+    @param {redirect- state} Boolean: true => redirect to list page 
+    @param {handleSubmitForm - event handler} cbFunc: handles validation of form upon submission 
+    @param {handleInputChange - event handler} cbFunc: Used for controlled comp of form 
     **/
 
     return (

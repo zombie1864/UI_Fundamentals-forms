@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
+import ToDoList from '../components/list/ToDoList'
 
 const ListPage = () => {
     return (
         <div>
-            <h1>ListPage</h1>
+            <h1>Task Index</h1>
+            <ToDoList/>
             <Link to='/'>
-                <button>Login Page</button>
+                <button>Logout</button>
             </Link>
         </div>
     )
