@@ -1,3 +1,6 @@
+import '../css/ToDoList.css'
+import { FiEdit2, FiTrash } from 'react-icons/fi'
+
 const ToDoListTemplate = (
     toDoList,
     input,
@@ -10,10 +13,14 @@ const ToDoListTemplate = (
     deleteItem
 ) => {
     return (
-        <div>
-        <div>
+        <div className='toDoListContainer'>
+        <div className='toDoListTopMenu'>
             <button>Search</button>
-            <button onClick={addNewItem}>New</button>
+            <button 
+            className='newItemBtn'
+            onClick={addNewItem}>
+                <span className='newItemtxt'>New</span>
+            </button>
         </div>
         {
             toggleNewItem && 
@@ -29,22 +36,36 @@ const ToDoListTemplate = (
         <ul>
             {toDoList.map((item, idx) => {
                 return (
-                    <div key={idx}>
-                    <li>
+                    <div key={idx} className='itemContainer'>
+                    <li className='liItem'>
                         { itemToEditIndex === idx ? 
                             <input
                             type="text"
                             defaultValue={item} // prevents clearing input for when user edits input field 
                             onChange={handleInputChange}
-                            /> : <span>{item}</span>
+                            /> : <span className='itemDisplayed'>{item}</span>
                         }
                     </li>
                     {
                         itemToEditIndex === idx ? 
                         <button onClick={saveNewItem}>Save</button> :
-                        <div>
-                            <button data-key={idx} onClick={editItem}>Edit</button>
-                            <button data-key={idx} onClick={deleteItem}>Delete</button>
+                        <div className='liBtnsContainer'>
+                            <button 
+                            className='editBtn'
+                            data-key={idx} 
+                            onClick={editItem}>
+                                <span className='editIcon'>
+                                    <FiEdit2/>
+                                </span>
+                            </button>
+                            <button 
+                            className='editBtn'
+                            data-key={idx} 
+                            onClick={deleteItem}>
+                                <span className='editIcon'>
+                                    <FiTrash/>
+                                </span>
+                            </button>
                         </div>
                     }
                     </div>

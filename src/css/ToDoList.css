@@ -1,0 +1,135 @@
+.toDoListContainer {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1em;
+    border-radius: 10px;
+    width: 55vw;
+    min-height: 150px;
+    max-width: 450px;
+    max-height: 600px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    background: linear-gradient(#2e5baebf,#151b26dd,#2e5baebf);
+    overflow: auto;
+}
+
+ul {
+    padding-inline-start: 0
+}
+
+li {
+    list-style: none;
+}
+
+
+.itemContainer {
+    padding: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid rgba(63, 63, 63, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    margin: 0px auto 20px auto;
+    transition: all 1s;
+}
+
+.toDoListTopMenu {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.newItemBtn {
+    color: white;
+    border-radius: 10px;
+    width: 80px;
+    height: 50px;
+    background-image: linear-gradient(
+        180deg,
+        #07addb, 
+        #151b26, 
+        #07addb 
+    );
+    border-style: solid;
+    border-width: thin;
+    cursor: pointer;
+}
+
+.newItemBtn:hover {
+    box-shadow: 10px -10px 25px 0 rgba(64, 122, 248, 0.8), -10px 10px 25px 0 rgba(39, 200, 255, 0.8);
+    transition: transform 0.1s;
+    transform: scale(1.05);
+}
+.newItemtxt{
+    animation: animate 10s linear infinite;
+    background: linear-gradient(135deg, #fcff4f  0%, #00d9ff 25%, #f7be45 50%, #de0013 75%, #fcff4f 100%);
+    background-size: 400%;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes animate {
+    100% {
+        background-position: 400%;
+    }
+}
+
+
+.editBtn {
+    color: lightblue;
+    background-color: black;
+    z-index: 1;
+    position: relative;
+}
+
+.editBtn:hover {
+    cursor: pointer;
+}
+
+.editIcon {
+    font-size: 18px;
+    z-index: -1;
+    position: relative;
+}
+
+.liItem, .liBtnsContainer {
+    display: inline-block;
+}
+
+
+.itemDisplayed {
+    color: #4FFFB0; 
+    font-size: 1.2em;  
+}
+
+
+.itemContainer:hover {
+    background: linear-gradient(#2e5bae86,#3ab57ea0);
+    border-bottom: 1.5px solid #4FFFB0;
+    box-shadow: 0 0 15px rgba(21, 189, 198, 0.3);
+}
+
+
+.toDoListContainer::-webkit-scrollbar {
+    width: 13px;
+}
+  
+.toDoListContainer::-webkit-scrollbar-track {
+    /* color of the tracking area */
+    background: linear-gradient(rgb(12, 239, 247), #151b26, rgb(0, 199, 182)); 
+    border-radius: 20px; 
+}
+
+.toDoListContainer::-webkit-scrollbar-thumb {
+    /* color of the scroll thumb */
+    background: linear-gradient(rgb(3, 80, 83), rgb(155, 248, 252), rgb(3, 80, 83));   
+    /* roundness of the scroll thumb */
+    border-radius: 20px; 
+    /* creates padding around scroll thumb */
+    border: 3px solid rgb(0, 149, 255);  
+}
