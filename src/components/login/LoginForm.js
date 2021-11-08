@@ -16,7 +16,7 @@ const LoginForm = () => {
         [redirect, setRedirect] = useState(false)
 
     const stagingRedirect = formSubmitted => {
-        if (formSubmitted) setTimeout(() => setRedirect(true), 1200);
+        if (formSubmitted) setTimeout(() => setRedirect(true), 1000);
     }
 
     if (formSubmitted) stagingRedirect(formSubmitted)
