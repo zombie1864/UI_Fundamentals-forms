@@ -1,20 +1,28 @@
 import LoginTemplate from '../../templates/LoginTemplate'
 import { validateForm } from '../../validators/validateForm.js'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { POSTdata } from '../../utils/http'
 
 const LoginForm = () => {
     /**
-    @description: login form comp 
+    @description: login form comp. Contains all the business logic of loginForm 
     @param {} Null: no props  
     **/
-
-   
     const [emailInput, setEmailInput] = useState(''),
         [pwdInput, setpwdInput] = useState(''),
         [formSubmitted, setFormSubmitted] = useState(false),
         [invalidEmail, setInvalidEmail] = useState(),
-        [invalidPwd, setInvalidPwd] = useState()
+        [invalidPwd, setInvalidPwd] = useState(),
+        [redirect, setRedirect] = useState(false)
+
+    const stagingRedirect = formSubmitted => {
+        if (formSubmitted) setTimeout(() => setRedirect(true), 1200);
+    }
+
+    if (formSubmitted) stagingRedirect(formSubmitted)
+    useEffect(() => { // performs cleanup of states on componentUnmount phase 
+        return () => setFormSubmitted(false)
+    }, [])
 
 
     const handleSubmitForm = event => {
@@ -24,20 +32,17 @@ const LoginForm = () => {
             password: pwdInput
         }
         let loginMetaData = validateForm(data)
-        console.log(loginMetaData);
         if (
             loginMetaData.containsValidEmail && 
             loginMetaData.containsValidPwd 
         ) {
             POSTdata(data)
             setFormSubmitted(true)
-            console.log('your data transmitted');
             setEmailInput('')
             setpwdInput('')
             setInvalidEmail()
             setInvalidPwd()
         } else {
-            console.log('invalid credentials');
             setInvalidEmail(!loginMetaData.containsValidEmail)
             setInvalidPwd(!loginMetaData.containsValidPwd)
         }
@@ -60,7 +65,6 @@ const LoginForm = () => {
             default:
         }
     }
-    
 
     return LoginTemplate(
         emailInput,
@@ -68,6 +72,7 @@ const LoginForm = () => {
         invalidEmail,
         invalidPwd,
         formSubmitted,
+        redirect,
         handleSubmitForm, 
         handleInputChange
     )

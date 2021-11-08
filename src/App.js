@@ -1,5 +1,5 @@
 import LoginPage from "./pages/LoginPage";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ListPage from "./pages/ListPage";
 import './css/App.css'
 
@@ -10,10 +10,10 @@ function App() {
   return (
     <div className='App'>
       <Router>
-      <Routes> 
-          <Route path='/' element={<LoginPage/>}/>
-          <Route path='/list' element={<ListPage/>}/>
-        </Routes>
+        <Switch> 
+          <Route path='/' exact component={LoginPage}/>
+          <Route path='/list' component={ListPage}/>
+        </Switch>
       </Router>
     </div>
   )

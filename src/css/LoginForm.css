@@ -16,7 +16,7 @@
     border-radius: 10px;
     width: 55vw;
     min-height: 150px;
-    max-width: 850px;
+    max-width: 450px;
     padding: 15px 10px 10px 10px;
     text-align: center;
     background: #151b26;
@@ -60,9 +60,6 @@
     margin: 0px 50px;
 }
 
-.inputContainer {
-    display: inline-block;
-}
 
 .icons{
     color: wheat;
