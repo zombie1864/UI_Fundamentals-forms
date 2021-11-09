@@ -43,15 +43,7 @@ const ToDoListTemplate = (
         }
         <ul>
             {
-                toDoList.filter(item => {
-                    if (searchTerm === ''){
-                        return item 
-                    } else if (
-                        item.toLowerCase().includes(searchTerm.toLowerCase())
-                    ) {
-                        return item 
-                    }
-                }).map((item, idx) => {
+                toDoList.map((item, idx) => {
                 return (
                     <div key={idx} className='itemContainer'>
                     <li className='liItem'>
@@ -76,10 +68,10 @@ const ToDoListTemplate = (
                                 </span>
                             </button>
                             <button 
-                            className='editBtn'
+                            className='deleteBtn'
                             data-key={idx} 
                             onClick={deleteItem}>
-                                <span className='editIcon'>
+                                <span className='deleteIcon'>
                                     <FiTrash/>
                                 </span>
                             </button>

@@ -113,18 +113,46 @@ li {
 
 
 .editBtn {
-    color: lightblue;
-    background-color: black;
+    color: rgb(230, 227, 173);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 1;
     position: relative;
-}
-
-.editBtn:hover {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-right: 30px;
+    height: 30px;
+    width: 30px;
+    border-style: none;
+    border-radius: 50%;
     cursor: pointer;
 }
 
+
 .editIcon {
-    font-size: 18px;
+    font-size: 25px;
+    z-index: -1;
+    position: relative;
+}
+
+
+.deleteBtn {
+    color: rgb(236, 189, 189);
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-right: 30px;
+    height: 30px;
+    width: 30px;
+    border-style: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.deleteIcon {
+    font-size: 25px;
     z-index: -1;
     position: relative;
 }
@@ -136,7 +164,9 @@ li {
 
 .itemDisplayed {
     color: #4FFFB0; 
-    font-size: 1.2em;  
+    font-size: 1.3em;  
+    line-height: 50px;
+    padding-left: 10px;
 }
 
 

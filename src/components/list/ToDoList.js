@@ -49,6 +49,7 @@ const ToDoList = () => {
     }
 
     const deleteItem = event => {
+        console.log(event.target.dataset.key);
         toDoList.splice(event.target.dataset.key, 1)
         setToDoList([...toDoList])
     }
