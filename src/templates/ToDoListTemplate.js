@@ -22,7 +22,7 @@ const ToDoListTemplate = (
             type='text'
             className='searchInput' 
             onChange={handleSearchRequest}
-            placeholder='Search'/>
+            placeholder='Search...'/>
             <button 
             className='newItemBtn'
             onClick={addNewItem}>
@@ -31,19 +31,29 @@ const ToDoListTemplate = (
         </div>
         {
             toggleNewItem && 
-            <div>
+            <div className='addItemContainer'>
                 <input 
+                className='addItemInput'
                 value={input}
                 type='text'
                 onChange={handleInputChange}
                 placeholder='Add New Task'/>
-                <button onClick={saveNewItem}>Save</button>
-                <button onClick={cancelAddNewItem}>Cancel</button>
+                <button className='saveItemBtn' onClick={saveNewItem}>Save</button>
+                <button className='cancelItemBtn' onClick={cancelAddNewItem}>Cancel</button>
             </div>
         }
         <ul>
             {
-                toDoList.map((item, idx) => {
+                toDoList.filter(item => {
+                    if (searchTerm === ''){
+                        return item 
+                    } else if (
+                        item.toLowerCase().includes(searchTerm.toLowerCase())
+                    ) {
+                        return item 
+                    }
+                    return null
+                }).map((item, idx) => {
                 return (
                     <div key={idx} className='itemContainer'>
                     <li className='liItem'>
@@ -52,7 +62,10 @@ const ToDoListTemplate = (
                             type="text"
                             defaultValue={item} // prevents clearing input for when user edits input field 
                             onChange={handleInputChange}
-                            /> : <span className='itemDisplayed'>{item}</span>
+                            /> : 
+                            <div className='itemDisplayedContainer'>
+                                <span className='itemDisplayed'>{item}</span>
+                            </div>
                         }
                     </li>
                     {

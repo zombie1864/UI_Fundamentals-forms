@@ -40,17 +40,19 @@ li {
 .toDoListTopMenu {
     display: flex;
     justify-content: space-between;
-
 }
 
 .searchInput {
+    background: url('../assets/img/icons8-search.svg') left center no-repeat ;
+    background-position-x: 10px;
+    background-size: 20px 20px;
     width: 150px;
     height: 50px;
     background-color: #151b26;
     color: wheat;
     border: none;
     border-radius: 5px;
-    padding-left: 10px;
+    padding-left: 40px;
     border-bottom: 1.5px solid rgba(63, 63, 63, 0.5);
 }
 
@@ -91,12 +93,33 @@ li {
     cursor: pointer;
 }
 
+.addItemContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px 20px 0px;
+}
+
+
+.addItemInput {
+    width: 150px;
+    height: 50px;
+    background-color: #151b26;
+    color:rgba(39, 200, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+    padding-left: 40px;
+    border-bottom: 1.5px solid rgba(63, 63, 63, 0.5);
+}
+
+
+
 .newItemBtn:hover {
     box-shadow: 10px -10px 25px 0 rgba(64, 122, 248, 0.8), -10px 10px 25px 0 rgba(39, 200, 255, 0.8);
     transition: transform 0.1s;
     transform: scale(1.05);
 }
-.newItemtxt{
+
+.newItemtxt {
     animation: animate 10s linear infinite;
     background: linear-gradient(135deg, #fcff4f  0%, #00d9ff 25%, #f7be45 50%, #de0013 75%, #fcff4f 100%);
     background-size: 400%;
@@ -111,12 +134,10 @@ li {
     }
 }
 
-
+/*  */
 .editBtn {
-    color: rgb(230, 227, 173);
+    color: rgba(230, 227, 173,0.5);
     background-color: rgba(0, 0, 0, 0);
-    z-index: 1;
-    position: relative;
     margin-top: 10px;
     margin-left: 20px;
     padding-right: 30px;
@@ -127,19 +148,21 @@ li {
     cursor: pointer;
 }
 
+.editBtn:hover {
+    color: rgb(230, 227, 173);
+    -webkit-filter: drop-shadow(3px 3px 5px rgb(230, 227, 173));
+    filter: drop-shadow(3px 3px 5px rgb(230, 227, 173));
+}
+/*  */
 
-.editIcon {
+.editIcon, .deleteIcon {
     font-size: 25px;
-    z-index: -1;
-    position: relative;
 }
 
 
 .deleteBtn {
-    color: rgb(236, 189, 189);
+    color: rgba(236, 189, 189, 0.5);
     background-color: rgba(0, 0, 0, 0);
-    z-index: 1;
-    position: relative;
     margin-top: 10px;
     margin-left: 20px;
     padding-right: 30px;
@@ -150,15 +173,21 @@ li {
     cursor: pointer;
 }
 
-
-.deleteIcon {
-    font-size: 25px;
-    z-index: -1;
-    position: relative;
+.deleteBtn:hover {
+    color: rgb(236, 189, 189);
+    -webkit-filter: drop-shadow(3px 3px 5px rgb(248, 118, 118));
+    filter: drop-shadow(3px 3px 5px rgb(248, 118, 118));
 }
+
 
 .liItem, .liBtnsContainer {
     display: inline-block;
+}
+
+.itemDisplayedContainer {
+    width: 300px;
+    height: 50px;
+    overflow: auto;
 }
 
 
@@ -167,6 +196,10 @@ li {
     font-size: 1.3em;  
     line-height: 50px;
     padding-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+
 }
 
 
@@ -177,17 +210,17 @@ li {
 }
 
 
-.toDoListContainer::-webkit-scrollbar {
+.toDoListContainer::-webkit-scrollbar, .itemDisplayedContainer::-webkit-scrollbar {
     width: 13px;
 }
   
-.toDoListContainer::-webkit-scrollbar-track {
+.toDoListContainer::-webkit-scrollbar-track, .itemDisplayedContainer::-webkit-scrollbar-track{
     /* color of the tracking area */
     background: linear-gradient(rgb(12, 239, 247), #151b26, rgb(0, 199, 182)); 
     border-radius: 20px; 
 }
 
-.toDoListContainer::-webkit-scrollbar-thumb {
+.toDoListContainer::-webkit-scrollbar-thumb, .itemDisplayedContainer::-webkit-scrollbar-thumb {
     /* color of the scroll thumb */
     background: linear-gradient(rgb(3, 80, 83), rgb(155, 248, 252), rgb(3, 80, 83));   
     /* roundness of the scroll thumb */
