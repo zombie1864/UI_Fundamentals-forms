@@ -1,5 +1,4 @@
 import '../css/ToDoList.css'
-import { FiEdit2, FiTrash } from 'react-icons/fi'
 
 const ToDoListTemplate = (
     toDoList,
@@ -76,17 +75,11 @@ const ToDoListTemplate = (
                             className='editBtn'
                             data-key={idx} 
                             onClick={editItem}>
-                                <span className='editIcon'>
-                                    <FiEdit2/>
-                                </span>
                             </button>
                             <button 
                             className='deleteBtn'
                             data-key={idx} 
                             onClick={deleteItem}>
-                                <span className='deleteIcon'>
-                                    <FiTrash/>
-                                </span>
                             </button>
                         </div>
                     }

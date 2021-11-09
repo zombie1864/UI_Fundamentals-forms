@@ -49,7 +49,7 @@ const ToDoList = () => {
     }
 
     const deleteItem = event => {
-        toDoList.splice(event.target.dataset.key, 1)
+        toDoList.splice(parseInt(event.target.dataset.key), 1)
         setToDoList([...toDoList])
     }
 

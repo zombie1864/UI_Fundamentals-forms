@@ -8,7 +8,11 @@ const ListPage = () => {
             <h1 className='taskTitle'>Task Index</h1>
             <ToDoList/>
             <Link to='/'>
-                <button>Logout</button>
+                <div className="loginBtnContainer">
+                    <span className="logoutSpan">
+                    <button className="logoutBtn">Logout</button>
+                    </span>
+                </div>
             </Link>
         </div>
     )
