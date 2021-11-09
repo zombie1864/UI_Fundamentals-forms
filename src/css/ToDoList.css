@@ -1,0 +1,259 @@
+.toDoListContainer {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1em;
+    border-radius: 10px;
+    width: 55vw;
+    min-height: 150px;
+    max-width: 450px;
+    max-height: 600px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    background: linear-gradient(#2e5baebf,#151b26dd,#2e5baebf);
+    overflow: auto;
+}
+
+ul {
+    padding-inline-start: 0
+}
+
+li {
+    list-style: none;
+}
+
+
+.itemContainer {
+    padding: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid rgba(63, 63, 63, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    margin: 0px auto 20px auto;
+    transition: all 1s;
+}
+
+.toDoListTopMenu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchInput {
+    background: url('../assets/img/icons8-search.svg') left center no-repeat ;
+    background-position-x: 10px;
+    background-size: 20px 20px;
+    width: 150px;
+    height: 50px;
+    background-color: #151b26;
+    color: wheat;
+    border: none;
+    border-radius: 5px;
+    padding-left: 40px;
+    border-bottom: 1.5px solid rgba(63, 63, 63, 0.5);
+}
+
+.searchInput:hover::placeholder {
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+
+.searchInput:hover,.searchInput:focus,.searchInput:active:focus {
+    color:rgba(39, 200, 255, 0.8);
+    border-bottom: 1.5px solid rgba(39, 200, 255, 0.8);
+    -webkit-transition:1s;
+    transition: 1s;
+}
+
+
+.searchInput:hover::placeholder {
+    color:#ff5722;
+    position:relative;
+    -webkit-transform:translateY(-10px);
+    transform:translateY(-10px);
+}
+
+.newItemBtn {
+    color: white;
+    border-radius: 10px;
+    width: 80px;
+    height: 50px;
+    background-image: linear-gradient(
+        180deg,
+        #07addb, 
+        #151b26, 
+        #07addb 
+    );
+    border-style: solid;
+    border-width: thin;
+    cursor: pointer;
+}
+
+.addItemContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px 20px 0px;
+}
+
+
+.addItemInput {
+    width: 150px;
+    height: 50px;
+    background-color: #151b26;
+    color:rgba(39, 200, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+    padding-left: 40px;
+    border-bottom: 1.5px solid rgba(63, 63, 63, 0.5);
+}
+
+
+.saveItemBtn, .cancelItemBtn {
+    cursor: pointer;
+    background-color: #151b26;
+    color: rgb(233, 139, 17);
+    width: 65px;
+    font-size: 1em;
+    border-width: thin;
+    border-radius: 5px;
+}
+
+.saveItemBtn {
+    text-align: center;
+    padding: 2px;
+}
+
+.saveItemBtn:hover {
+    cursor: pointer;
+    background-color: rgb(53, 233, 17);
+    color: rgb(253, 0, 0);
+    transition: 0.6s;
+    box-shadow: 0 0 5px rgb(65, 255, 7), 0 0 15px rgb(65, 255, 7), 0 0 65px rgb(65, 255, 7)
+}
+
+
+.cancelItemBtn:hover {
+    cursor: pointer;
+    background-color: red;
+    transition: 0.6s;
+    color: rgb(253, 236, 0);
+    box-shadow: 0 0 5px rgb(255, 98, 7), 0 0 15px rgb(255, 98, 7), 0 0 65px rgb(255, 98, 7)
+}
+
+.newItemBtn:hover {
+    box-shadow: 10px -10px 25px 0 rgba(64, 122, 248, 0.8), -10px 10px 25px 0 rgba(39, 200, 255, 0.8);
+    transition: transform 0.1s;
+    transform: scale(1.05);
+}
+
+.newItemtxt {
+    animation: animate 10s linear infinite;
+    background: linear-gradient(135deg, #fcff4f  0%, #00d9ff 25%, #f7be45 50%, #de0013 75%, #fcff4f 100%);
+    background-size: 400%;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes animate {
+    100% {
+        background-position: 400%;
+    }
+}
+
+.editBtn {
+    background: url(../assets/img/editPen.svg) center no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-right: 30px;
+    height: 30px;
+    width: 30px;
+    border-style: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.editBtn:hover {
+    -webkit-filter: drop-shadow(3px 3px 2px rgb(230, 227, 173));
+    filter: drop-shadow(3px 3px 2px rgb(230, 227, 173)) saturate(2500%)  brightness(100%);
+}
+
+
+
+.editIcon, .deleteIcon {
+    font-size: 25px;
+}
+
+
+.deleteBtn {
+    background: url(../assets/img/icons8-remove.svg) center no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-right: 30px;
+    height: 30px;
+    width: 30px;
+    border-style: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    -webkit-filter: drop-shadow(3px 3px 2px rgb(248, 118, 118));
+    filter: drop-shadow(3px 3px 2px rgb(248, 118, 118)) saturate(1000%)  brightness(100%);
+}
+
+
+.liItem, .liBtnsContainer {
+    display: inline-block;
+}
+
+.itemDisplayedContainer {
+    width: 300px;
+    height: 50px;
+    overflow: auto;
+}
+
+
+.itemDisplayed {
+    color: #4FFFB0; 
+    font-size: 1.3em;  
+    line-height: 50px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+
+}
+
+
+.itemContainer:hover {
+    background: linear-gradient(#2e5bae86,#3ab57ea0);
+    border-bottom: 1.5px solid #4FFFB0;
+    box-shadow: 0 0 15px rgba(21, 189, 198, 0.3);
+}
+
+
+.toDoListContainer::-webkit-scrollbar, .itemDisplayedContainer::-webkit-scrollbar {
+    width: 13px;
+}
+  
+.toDoListContainer::-webkit-scrollbar-track, .itemDisplayedContainer::-webkit-scrollbar-track{
+    /* color of the tracking area */
+    background: linear-gradient(rgb(12, 239, 247), #151b26, rgb(0, 199, 182)); 
+    border-radius: 20px; 
+}
+
+.toDoListContainer::-webkit-scrollbar-thumb, .itemDisplayedContainer::-webkit-scrollbar-thumb {
+    /* color of the scroll thumb */
+    background: linear-gradient(rgb(3, 80, 83), rgb(155, 248, 252), rgb(3, 80, 83));   
+    /* roundness of the scroll thumb */
+    border-radius: 20px; 
+    /* creates padding around scroll thumb */
+    border: 3px solid rgb(0, 149, 255);  
+}

@@ -10,7 +10,8 @@ const ToDoList = () => {
         [toggleNewItem, setToggleNewItem] = useState(false),
         [input, setInput] = useState(''),
         [editable, setEditable] = useState(false),
-        [itemToEditIndex, setItemToEdit] = useState()
+        [itemToEditIndex, setItemToEdit] = useState(),
+        [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {
         const data = localStorage.getItem("myList")
@@ -22,6 +23,11 @@ const ToDoList = () => {
         
     const addNewItem = () => setToggleNewItem(true)
     const handleInputChange = event => setInput(event.target.value)
+    const handleSearchRequest = event => setSearchTerm(event.target.value)
+    const cancelAddNewItem = () => {
+        setToggleNewItem(false)
+        setInput('')
+    }
 
     const saveNewItem = () => {
         if (input.length <= 25 && input.length >= 1) setToDoList([...toDoList,input])
@@ -43,7 +49,7 @@ const ToDoList = () => {
     }
 
     const deleteItem = event => {
-        toDoList.splice(event.target.dataset.key, 1)
+        toDoList.splice(parseInt(event.target.dataset.key), 1)
         setToDoList([...toDoList])
     }
 
@@ -52,11 +58,14 @@ const ToDoList = () => {
         input,
         toggleNewItem,
         itemToEditIndex,
+        searchTerm,
         addNewItem,
         handleInputChange,
         saveNewItem,
         editItem,
-        deleteItem
+        deleteItem,
+        handleSearchRequest,
+        cancelAddNewItem
     )
 }
 

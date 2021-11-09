@@ -36,7 +36,7 @@ const LoginForm = () => {
             loginMetaData.containsValidEmail && 
             loginMetaData.containsValidPwd 
         ) {
-            POSTdata(data)
+            // POSTdata(data)
             setFormSubmitted(true)
             setEmailInput('')
             setpwdInput('')

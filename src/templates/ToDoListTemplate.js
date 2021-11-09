@@ -1,50 +1,86 @@
+import '../css/ToDoList.css'
+
 const ToDoListTemplate = (
     toDoList,
     input,
     toggleNewItem,
     itemToEditIndex,
+    searchTerm,
     addNewItem,
     handleInputChange,
     saveNewItem,
     editItem,
-    deleteItem
+    deleteItem,
+    handleSearchRequest,
+    cancelAddNewItem
 ) => {
     return (
-        <div>
-        <div>
-            <button>Search</button>
-            <button onClick={addNewItem}>New</button>
+        <div className='toDoListContainer'>
+        <div className='toDoListTopMenu'>
+            <input 
+            type='text'
+            className='searchInput' 
+            onChange={handleSearchRequest}
+            placeholder='Search...'/>
+            <button 
+            className='newItemBtn'
+            onClick={addNewItem}>
+                <span className='newItemtxt'>New</span>
+            </button>
         </div>
         {
             toggleNewItem && 
-            <div>
+            <div className='addItemContainer'>
                 <input 
+                className='addItemInput'
                 value={input}
                 type='text'
                 onChange={handleInputChange}
                 placeholder='Add New Task'/>
-                <button onClick={saveNewItem}>Save</button>
+                <button className='saveItemBtn' onClick={saveNewItem}>Save</button>
+                <button className='cancelItemBtn' onClick={cancelAddNewItem}>Cancel</button>
             </div>
         }
         <ul>
-            {toDoList.map((item, idx) => {
+            {
+                toDoList.filter(item => {
+                    if (searchTerm === ''){
+                        return item 
+                    } else if (
+                        item.toLowerCase().includes(searchTerm.toLowerCase())
+                    ) {
+                        return item 
+                    }
+                    return null
+                }).map((item, idx) => {
                 return (
-                    <div key={idx}>
-                    <li>
+                    <div key={idx} className='itemContainer'>
+                    <li className='liItem'>
                         { itemToEditIndex === idx ? 
                             <input
                             type="text"
                             defaultValue={item} // prevents clearing input for when user edits input field 
                             onChange={handleInputChange}
-                            /> : <span>{item}</span>
+                            /> : 
+                            <div className='itemDisplayedContainer'>
+                                <span className='itemDisplayed'>{item}</span>
+                            </div>
                         }
                     </li>
                     {
                         itemToEditIndex === idx ? 
                         <button onClick={saveNewItem}>Save</button> :
-                        <div>
-                            <button data-key={idx} onClick={editItem}>Edit</button>
-                            <button data-key={idx} onClick={deleteItem}>Delete</button>
+                        <div className='liBtnsContainer'>
+                            <button 
+                            className='editBtn'
+                            data-key={idx} 
+                            onClick={editItem}>
+                            </button>
+                            <button 
+                            className='deleteBtn'
+                            data-key={idx} 
+                            onClick={deleteItem}>
+                            </button>
                         </div>
                     }
                     </div>
