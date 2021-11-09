@@ -6,16 +6,23 @@ const ToDoListTemplate = (
     input,
     toggleNewItem,
     itemToEditIndex,
+    searchTerm,
     addNewItem,
     handleInputChange,
     saveNewItem,
     editItem,
-    deleteItem
+    deleteItem,
+    handleSearchRequest,
+    cancelAddNewItem
 ) => {
     return (
         <div className='toDoListContainer'>
         <div className='toDoListTopMenu'>
-            <button>Search</button>
+            <input 
+            type='text'
+            className='searchInput' 
+            onChange={handleSearchRequest}
+            placeholder='Search'/>
             <button 
             className='newItemBtn'
             onClick={addNewItem}>
@@ -31,10 +38,20 @@ const ToDoListTemplate = (
                 onChange={handleInputChange}
                 placeholder='Add New Task'/>
                 <button onClick={saveNewItem}>Save</button>
+                <button onClick={cancelAddNewItem}>Cancel</button>
             </div>
         }
         <ul>
-            {toDoList.map((item, idx) => {
+            {
+                toDoList.filter(item => {
+                    if (searchTerm === ''){
+                        return item 
+                    } else if (
+                        item.toLowerCase().includes(searchTerm.toLowerCase())
+                    ) {
+                        return item 
+                    }
+                }).map((item, idx) => {
                 return (
                     <div key={idx} className='itemContainer'>
                     <li className='liItem'>
