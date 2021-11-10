@@ -9,7 +9,7 @@
     width: 55vw;
     min-height: 150px;
     max-width: 450px;
-    max-height: 600px;
+    max-height: 560px;
     padding: 10px 10px 10px 10px;
     text-align: center;
     background: linear-gradient(#2e5baebf,#151b26dd,#2e5baebf);
@@ -144,7 +144,6 @@ li {
 }
 
 .saveItemBtn:hover {
-    cursor: pointer;
     background-color: rgb(53, 233, 17);
     color: rgb(253, 0, 0);
     transition: 0.6s;
@@ -153,11 +152,17 @@ li {
 
 
 .cancelItemBtn:hover {
-    cursor: pointer;
     background-color: red;
     transition: 0.6s;
     color: rgb(253, 236, 0);
     box-shadow: 0 0 5px rgb(255, 98, 7), 0 0 15px rgb(255, 98, 7), 0 0 65px rgb(255, 98, 7)
+}
+
+.saveEditBtn:hover {
+    background-color: rgb(233, 139, 17);
+    transition: 0.6s;
+    color: rgb(253, 236, 0);
+    box-shadow: 0 0 5px rgb(233, 139, 17), 0 0 15px rgb(233, 139, 17), 0 0 65px rgb(233, 139, 17)
 }
 
 .newItemBtn:hover {

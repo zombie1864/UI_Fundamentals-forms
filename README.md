@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# MVP Checklist 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The following will highlight key features of this project, which is a basic to do list. The design architecture of the codebase focuses on seperation of concern principles, in which the code is divided into application logic, business logic, and views logic (aka templates). The code design follows modern functional components and keeps modular design principles to allow expansion of codebase and to follow testing in isolation design patterns. The following below is a breakdown of feature and time estimations on deliverables. 
 
-## Available Scripts
+# Planing Phase (Est. 0.5 Day)
 
-In the project directory, you can run:
+In this phase i broke down all project requirements and planned how to meet each specs using react. For this task i did not used any state manager such as Redux as doing so would over complicate the correct methodologies needed to solve said task. Instead i opt for a simpler solution which only involves react. React-router-dom and react-icons where the only third party dependencies used for this project. 
 
-### `npm start`
+# Feature 1: Login (Est. 1.5 Day) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The login portion was achieved using basic HTML form. Utilizing react features the login form is a controlled component in which the login state changes upon user interaction. Validators were also implemented to each form field to ensure user input data is "clean data" that can be propagated without too much "cleaning" of the data. Validators also enforce correct input by allowing react to display errors on the UI layer of the application. Basic testing was added to validate the business logic of validators under the test dir. However a more robust testing is adviced but is outside the scope of this project. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Feature 2: List Page (Est. 1.5 Day)
 
-### `npm test`
+Upon succesful login, typically an HTTP request is sent to server. In this early scope of the project - cors preflight is triggered indicating server-side issue with handling preflight OPTIONS. Assumption at this stage was made to assume success HTTP response from server and bypass the propagation of data from backend server to frontend by making use of local storage. Local storage allows data to persist in the frontend without the use of a backend server. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Styling (Est. 1.5 Day)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This stage nears the end of project development lifecycle in which styling is added to ensure a pleasing view of UI layer. CSS was used with no assistence from 3rd party libaries such as bootstrap or material UI. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# UI Testing and Debug (Est 0.5 Day)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Testing on UI layer entails to search for buggy behavior that the client would experience. To solve any buggy behavior testing was implemented and logging the propagation of data was utilized. Logging propagation of data is essential for when event handlers are implemented. 
 
-### `npm run eject`
+# Future Improvements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Beyound the scope of the initial purpose of the project i am to include more features. Such as allowing user to use app upon loading to home page. Users with accounts can login in and experience more features like archeiving there task and seeing through them, adding reminders, categorizing task into different levels of priorities, allowing a single task item to contain multiple sub-task (steps for a plan). 

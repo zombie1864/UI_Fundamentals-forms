@@ -21,7 +21,10 @@ const ToDoList = () => {
 
     useEffect(() => localStorage.setItem('myList', JSON.stringify(toDoList)))
         
-    const addNewItem = () => setToggleNewItem(true)
+    const addNewItem = () => { 
+        if (editable) return 
+        setToggleNewItem(true)
+    } 
     const handleInputChange = event => setInput(event.target.value)
     const handleSearchRequest = event => setSearchTerm(event.target.value)
     const cancelAddNewItem = () => {
