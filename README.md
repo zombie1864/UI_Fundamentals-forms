@@ -25,4 +25,4 @@ Testing on UI layer entails to search for buggy behavior that the client would e
 
 # Future Improvements
 
-Beyound the scope of the initial purpose of the project i am to include more features. Such as allowing user to use app upon loading to home page. Users with accounts can login in and experience more features like archeiving there task and seeing through them, adding reminders, categorizing task into different levels of priorities, allowing a single task item to contain multiple sub-task (steps for a plan). 
+Beyound the scope of the initial purpose of this project i aim to include more features. Such as allowing user to use app upon loading to home page. Users with accounts can login in and experience more features like archeiving there task and seeing through them, adding reminders, categorizing task into different levels of priorities, allowing a single task item to contain multiple sub-task (steps for a plan) and possibly more. 
