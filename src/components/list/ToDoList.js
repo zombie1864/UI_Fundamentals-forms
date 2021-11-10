@@ -30,18 +30,21 @@ const ToDoList = () => {
     }
 
     const saveNewItem = () => {
-        if (input.length <= 25 && input.length >= 1) setToDoList([...toDoList,input])
-        setInput('')
-        setToggleNewItem(false)
+        if (input.length <= 25 && input.length >= 1 && !editable) {
+            setToDoList([...toDoList,input])
+        }
         if (editable) {
+            setEditable(false)
             setToDoList(toDoList.map((item, idx) => {
                 if (idx === itemToEditIndex) item = input
                 return item
             }))
-            setItemToEdit()
-            setEditable(false)
         }
-    } // NOTE UI should tell user if input is too long 
+        setToggleNewItem(false)
+        setInput('')
+        setItemToEdit()
+        setEditable(false)
+    } 
     
     const editItem = event => {
         setItemToEdit(parseInt(event.target.dataset.key))

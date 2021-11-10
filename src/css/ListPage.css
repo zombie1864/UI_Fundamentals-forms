@@ -7,6 +7,7 @@
 
 
 .loginBtnContainer .logoutSpan{
+    background-color: blueviolet;
     position: fixed;
     margin-top: 50px;
     left: 80%;

@@ -37,6 +37,21 @@ li {
     transition: all 1s;
 }
 
+
+.item {
+    background-position-x: 10px;
+    background-size: 20px 20px;
+    width: 30vw;
+    max-width: 300px;
+    height: 50px;
+    background-color: #151b26;
+    color: wheat;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    border-bottom: 1.5px solid rgba(63, 63, 63, 0.5);
+}
+
 .toDoListTopMenu {
     display: flex;
     justify-content: space-between;
@@ -101,18 +116,19 @@ li {
 
 
 .addItemInput {
-    width: 150px;
+    width: 20vw;
+    max-width: 167px;
     height: 50px;
     background-color: #151b26;
     color:rgba(39, 200, 255, 0.8);
     border: none;
     border-radius: 5px;
-    padding-left: 40px;
+    padding-left: min(40px, 5%);
     border-bottom: 1.5px solid rgba(63, 63, 63, 0.5);
 }
 
 
-.saveItemBtn, .cancelItemBtn {
+.saveItemBtn, .cancelItemBtn, .saveEditBtn {
     cursor: pointer;
     background-color: #151b26;
     color: rgb(233, 139, 17);
@@ -209,12 +225,14 @@ li {
 }
 
 
+
 .liItem, .liBtnsContainer {
     display: inline-block;
 }
 
 .itemDisplayedContainer {
-    width: 300px;
+    width: 25vw;
+    max-width: 300px;
     height: 50px;
     overflow: auto;
 }
@@ -230,6 +248,7 @@ li {
     width: auto;
 
 }
+
 
 
 .itemContainer:hover {

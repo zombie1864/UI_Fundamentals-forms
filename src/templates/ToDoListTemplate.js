@@ -59,6 +59,7 @@ const ToDoListTemplate = (
                         { itemToEditIndex === idx ? 
                             <input
                             type="text"
+                            className='item'
                             defaultValue={item} // prevents clearing input for when user edits input field 
                             onChange={handleInputChange}
                             /> : 
@@ -69,7 +70,7 @@ const ToDoListTemplate = (
                     </li>
                     {
                         itemToEditIndex === idx ? 
-                        <button onClick={saveNewItem}>Save</button> :
+                        <button className='saveEditBtn' onClick={saveNewItem}>Save</button> :
                         <div className='liBtnsContainer'>
                             <button 
                             className='editBtn'

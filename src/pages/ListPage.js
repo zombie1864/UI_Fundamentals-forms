@@ -7,13 +7,13 @@ const ListPage = () => {
         <div>
             <h1 className='taskTitle'>Task Index</h1>
             <ToDoList/>
-            <Link to='/'>
                 <div className="loginBtnContainer">
                     <span className="logoutSpan">
-                    <button className="logoutBtn">Logout</button>
+                        <Link to='/'>
+                            <button className="logoutBtn">Logout</button>
+                        </Link>
                     </span>
                 </div>
-            </Link>
         </div>
     )
 }
