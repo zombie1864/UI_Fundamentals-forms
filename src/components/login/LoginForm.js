@@ -1,7 +1,6 @@
 import LoginTemplate from '../../templates/LoginTemplate'
 import { validateForm } from '../../validators/validateForm.js'
 import { useState, useEffect } from 'react'
-import { POSTdata } from '../../utils/http'
 
 const LoginForm = () => {
     /**

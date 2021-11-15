@@ -11,7 +11,8 @@ const ToDoList = () => {
         [input, setInput] = useState(''),
         [editable, setEditable] = useState(false),
         [itemToEditIndex, setItemToEdit] = useState(),
-        [searchTerm, setSearchTerm] = useState('')
+        [searchTerm, setSearchTerm] = useState(''),
+        [inputDetected, setInputDetected] = useState(false)
 
     useEffect(() => {
         const data = localStorage.getItem("myList")
@@ -25,7 +26,10 @@ const ToDoList = () => {
         if (editable) return 
         setToggleNewItem(true)
     } 
-    const handleInputChange = event => setInput(event.target.value)
+    const handleInputChange = event => { 
+        setInputDetected(true)
+        setInput(event.target.value)
+     }
     const handleSearchRequest = event => setSearchTerm(event.target.value)
     const cancelAddNewItem = () => {
         setToggleNewItem(false)
@@ -33,10 +37,10 @@ const ToDoList = () => {
     }
 
     const saveNewItem = () => {
-        if (input.length <= 25 && input.length >= 1 && !editable) {
+        if (input.length <= 250 && input.length >= 1 && !editable) {
             setToDoList([...toDoList,input])
         }
-        if (editable) {
+        if (editable && inputDetected) {
             setEditable(false)
             setToDoList(toDoList.map((item, idx) => {
                 if (idx === itemToEditIndex) item = input
@@ -47,6 +51,7 @@ const ToDoList = () => {
         setInput('')
         setItemToEdit()
         setEditable(false)
+        setInputDetected(false)
     } 
     
     const editItem = event => {

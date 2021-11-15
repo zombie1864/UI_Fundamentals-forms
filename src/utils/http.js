@@ -4,7 +4,7 @@ export const POSTdata = async (dataToSubmit) => {
     @param {dataToSubmit} Object
     **/
     const httpReq = await fetch(
-        'http://dev.rapptrlabs.com/Tests/scripts/user-login.php', 
+        'http://127.0.0.1:5000', 
         {
             method: 'POST', 
             headers: { 
@@ -19,4 +19,3 @@ export const POSTdata = async (dataToSubmit) => {
     return httpResp
 }
 
-// test@rapptrlabs.com
