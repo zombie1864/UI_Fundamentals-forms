@@ -1,5 +1,5 @@
 import LoginPage from "./pages/LoginPage";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import ListPage from "./pages/ListPage";
 import './css/App.css'
 
