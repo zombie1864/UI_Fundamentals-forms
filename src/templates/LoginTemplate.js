@@ -28,7 +28,7 @@ const LoginTemplate = (
 
     return (
         <div>
-            <h1 className='logo'>Task Master</h1>
+            <h1 className='logo'>Rapptr Labs</h1>
             <form className='loginForm' onSubmit={handleSubmitForm}>
                     <label className='formLabels'>Email</label>
                     <div>
