@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/UI_Fundamentals-forms/static/css/main.4232e852.chunk.css",
+    "main.js": "/UI_Fundamentals-forms/static/js/main.95db3e65.chunk.js",
+    "main.js.map": "/UI_Fundamentals-forms/static/js/main.95db3e65.chunk.js.map",
+    "runtime-main.js": "/UI_Fundamentals-forms/static/js/runtime-main.9cee90dd.js",
+    "runtime-main.js.map": "/UI_Fundamentals-forms/static/js/runtime-main.9cee90dd.js.map",
+    "static/js/2.4efbcf67.chunk.js": "/UI_Fundamentals-forms/static/js/2.4efbcf67.chunk.js",
+    "static/js/2.4efbcf67.chunk.js.map": "/UI_Fundamentals-forms/static/js/2.4efbcf67.chunk.js.map",
+    "index.html": "/UI_Fundamentals-forms/index.html",
+    "static/css/main.4232e852.chunk.css.map": "/UI_Fundamentals-forms/static/css/main.4232e852.chunk.css.map",
+    "static/js/2.4efbcf67.chunk.js.LICENSE.txt": "/UI_Fundamentals-forms/static/js/2.4efbcf67.chunk.js.LICENSE.txt",
+    "static/media/ToDoList.css": "/UI_Fundamentals-forms/static/media/icons8-search.c0f45510.svg",
+    "static/media/App.css": "/UI_Fundamentals-forms/static/media/—Pngtree—tech background creative synthesis poster_1052587.0de5ddb8.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9cee90dd.js",
+    "static/js/2.4efbcf67.chunk.js",
+    "static/css/main.4232e852.chunk.css",
+    "static/js/main.95db3e65.chunk.js"
+  ]
+}
